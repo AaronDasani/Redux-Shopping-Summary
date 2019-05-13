@@ -1,33 +1,114 @@
-.App {
-  text-align: center;
+body{
+    text-align: center;
+    margin: 0px auto;
+    color: rgb(46, 46, 46);
+    background-color: rgb(238, 238, 238);
+}
+.topSection{
+    text-align: start;
+    padding: 0px 30px;
+}
+.topSection div{
+    margin-bottom: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+@keyframes summaryTitleAnim{
+    0%{left:100%}
+    50%{
+        opacity: 0.6;
+    }
+    100%{
+        left:0%; 
+        visibility: visible;
+        opacity: 1;
+
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.summaryTitle{
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    animation: summaryTitleAnim 0.6s ease-in-out forwards;
+    animation-delay: 0.4s;
 }
 
-.App-link {
-  color: #61dafb;
+
+@keyframes SummaryEntrance {
+    0%{left:90%}
+    100%{left:35%}
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.PurchaseSummary{
+    box-shadow: 0 3px 10px rgb(199, 199, 199);
+    width: 30%;
+    position: absolute;
+    left: 90%;
+    margin-top: 5%;
+    background-color: rgb(254, 254, 254);
+    border-radius: 5px;
+    animation: SummaryEntrance 0.7s ease-in-out forwards;
+    margin-top: 10%;
+}
+
+
+@keyframes promoCodeAnimation{
+    0%{
+        transform: scale(0.5)
+    }
+    25%{
+        transform: scale(1.2)
+    }
+    55%{
+        transform: scale(0.8)
+    }
+    80%{
+        transform: scale(1.1)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+.DiscountImg img{
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 140px;
+    animation: promoCodeAnimation linear 0.4s forwards;
+}
+
+button{
+    display: block;
+}
+
+/* pickup sAVING */
+.btn-toolbar span {
+    text-decoration: underline;
+}
+.btn-toolbar span:hover{
+    cursor: pointer;
+}
+
+.bottomSection{
+    padding: 0px 30px;
+    padding-bottom: 30px;
+}
+
+/* Item Detail */
+.collaspeBtn{
+    border: none;
+    text-decoration: underline;
+}
+#itemDetail-collapse .row{
+    box-shadow: 0px 0px 3px rgb(196, 196, 196);
+    border-radius: 3px;
+    background-color: rgba(247, 247, 247, 0.92);
+    padding: 10px 0px;
+}
+#itemDetail-collapse img{
+    background-size: contain;
+    width:  90%;
+    border-radius: 5px;
 }
